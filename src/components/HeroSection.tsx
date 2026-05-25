@@ -1,93 +1,165 @@
 "use client";
 
 import React from "react";
-import { Search, MapPin, Calendar, Users, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { Search, MapPin, Calendar, Users, Plane, Sparkles } from "lucide-react";
 import { Button } from "./ui/Button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with mesh gradient */}
-      <div className="absolute inset-0 bg-[#0a0f1a]" />
-      <div className="absolute inset-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-600/30 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-violet-600/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] bg-cyan-500/15 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: "2s" }} />
+    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+      {/* Animated Background Blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-gradient-to-br from-blue-200/40 to-cyan-200/40 animate-blob opacity-60" />
+        <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-violet-200/30 to-pink-200/30 animate-blob opacity-50" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-gradient-to-bl from-amber-100/40 to-orange-100/30 animate-blob opacity-40" style={{ animationDelay: "4s" }} />
       </div>
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[15%] left-[8%] sm:left-[15%] w-14 h-14 bg-white rounded-2xl shadow-lg shadow-blue-100 flex items-center justify-center"
+        >
+          <Plane className="text-blue-500" size={24} />
+        </motion.div>
+        <motion.div
+          animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-[20%] right-[8%] sm:right-[12%] w-12 h-12 bg-white rounded-2xl shadow-lg shadow-emerald-100 flex items-center justify-center"
+        >
+          <span className="text-2xl">🏝️</span>
+        </motion.div>
+        <motion.div
+          animate={{ y: [-8, 12, -8], rotate: [0, 3, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[25%] left-[5%] sm:left-[10%] w-11 h-11 bg-white rounded-xl shadow-lg shadow-amber-100 flex items-center justify-center"
+        >
+          <span className="text-xl">⛰️</span>
+        </motion.div>
+        <motion.div
+          animate={{ y: [5, -15, 5], rotate: [0, -3, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="absolute bottom-[30%] right-[5%] sm:right-[8%] w-12 h-12 bg-white rounded-2xl shadow-lg shadow-pink-100 flex items-center justify-center"
+        >
+          <span className="text-2xl">🌊</span>
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center pt-20 pb-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-md rounded-full border border-white/10 mb-10 shadow-[0_0_15px_rgba(56,189,248,0.1)]">
-          <Sparkles size={14} className="text-amber-400" />
-          <span className="text-white/80 text-sm font-medium tracking-wide">Liburan Murah Liburan Ceria</span>
-          <span className="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] font-bold rounded-full uppercase tracking-wider">New</span>
-        </div>
-
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tight">
-          <span className="block">Explore</span>
-          <span className="block mt-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
-            Nusantara
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-blue-100 mb-8 shadow-sm"
+        >
+          <Sparkles size={14} className="text-amber-500" />
+          <span className="text-blue-700 text-sm font-semibold">Liburan Murah Liburan Ceria</span>
+          <span className="px-2.5 py-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider">
+            2026
           </span>
-          <span className="block mt-2 text-3xl sm:text-4xl md:text-5xl font-bold text-white/60">
-            Tanpa Batas.
-          </span>
-        </h1>
+        </motion.div>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/50 mb-12 max-w-xl mx-auto leading-relaxed font-light">
-          Destinasi premium, harga yang bersahabat. 
-          <span className="text-white/80 font-medium"> Mulai petualanganmu sekarang.</span>
-        </p>
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-[1] tracking-tight"
+        >
+          <span className="block">Jelajahi</span>
+          <span className="block mt-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 bg-clip-text text-transparent">
+            Keajaiban
+          </span>
+          <span className="block mt-1">Nusantara</span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-base sm:text-lg md:text-xl text-gray-500 mb-10 max-w-lg mx-auto leading-relaxed"
+        >
+          Destinasi premium dengan harga terjangkau.
+          <span className="text-gray-800 font-semibold"> Mulai petualanganmu hari ini!</span>
+        </motion.p>
 
         {/* Search Bar */}
-        <div className="max-w-4xl mx-auto bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 p-5 sm:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex items-center gap-3 px-4 py-3.5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-colors cursor-pointer group">
-              <MapPin className="text-cyan-400 shrink-0 group-hover:scale-110 transition-transform" size={20} />
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl shadow-blue-100/50 border border-gray-100 p-3 sm:p-5"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="flex items-center gap-3 px-4 py-3.5 bg-gray-50 rounded-2xl hover:bg-blue-50 transition-colors cursor-pointer group">
+              <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <MapPin className="text-blue-600" size={18} />
+              </div>
               <div className="text-left">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider font-medium">Destinasi</p>
-                <p className="text-sm font-medium text-white/80">Mau kemana?</p>
+                <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Destinasi</p>
+                <p className="text-sm font-semibold text-gray-700">Mau kemana?</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-4 py-3.5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-colors cursor-pointer group">
-              <Calendar className="text-violet-400 shrink-0 group-hover:scale-110 transition-transform" size={20} />
+            <div className="flex items-center gap-3 px-4 py-3.5 bg-gray-50 rounded-2xl hover:bg-violet-50 transition-colors cursor-pointer group">
+              <div className="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center group-hover:bg-violet-200 transition-colors">
+                <Calendar className="text-violet-600" size={18} />
+              </div>
               <div className="text-left">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider font-medium">Tanggal</p>
-                <p className="text-sm font-medium text-white/80">Pilih tanggal</p>
+                <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Tanggal</p>
+                <p className="text-sm font-semibold text-gray-700">Pilih tanggal</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-4 py-3.5 bg-white/5 rounded-2xl border border-white/5 hover:border-white/20 transition-colors cursor-pointer group">
-              <Users className="text-amber-400 shrink-0 group-hover:scale-110 transition-transform" size={20} />
+            <div className="flex items-center gap-3 px-4 py-3.5 bg-gray-50 rounded-2xl hover:bg-amber-50 transition-colors cursor-pointer group">
+              <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center group-hover:bg-amber-200 transition-colors">
+                <Users className="text-amber-600" size={18} />
+              </div>
               <div className="text-left">
-                <p className="text-[10px] text-white/40 uppercase tracking-wider font-medium">Peserta</p>
-                <p className="text-sm font-medium text-white/80">2 orang</p>
+                <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wide">Peserta</p>
+                <p className="text-sm font-semibold text-gray-700">2 orang</p>
               </div>
             </div>
 
-            <Button className="w-full gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 border-0 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] rounded-2xl" size="lg">
+            <Button className="w-full gap-2 rounded-2xl shadow-lg shadow-blue-200/50 hover:shadow-blue-300/60 hover:scale-[1.02] active:scale-[0.98] transition-all" size="lg">
               <Search size={18} />
-              Cari
+              Cari Trip
             </Button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-10 sm:gap-16 mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-6 sm:gap-12 mt-14"
+        >
           {[
-            { value: "500+", label: "Destinasi" },
-            { value: "50K+", label: "Traveler Happy" },
-            { value: "4.9", label: "Rating" },
-            { value: "100%", label: "Terpercaya" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-2xl sm:text-4xl font-black text-white tracking-tight">{stat.value}</p>
-              <p className="text-xs sm:text-sm text-white/40 mt-1 font-medium">{stat.label}</p>
-            </div>
+            { value: "500+", label: "Destinasi", emoji: "📍" },
+            { value: "50K+", label: "Traveler Happy", emoji: "😍" },
+            { value: "4.9", label: "Rating", emoji: "⭐" },
+            { value: "100%", label: "Terpercaya", emoji: "🛡️" },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.9 + i * 0.1 }}
+              className="text-center bg-white/60 backdrop-blur-sm px-5 py-3 rounded-2xl border border-gray-100"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <span className="text-base">{stat.emoji}</span>
+                <p className="text-xl sm:text-2xl font-black text-gray-900">{stat.value}</p>
+              </div>
+              <p className="text-xs text-gray-500 mt-0.5 font-medium">{stat.label}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
