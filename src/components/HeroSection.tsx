@@ -125,10 +125,12 @@ export function HeroSection() {
               </div>
             </div>
 
-            <Button className="w-full gap-2 rounded-2xl shadow-lg shadow-blue-200/50 hover:shadow-blue-300/60 hover:scale-[1.02] active:scale-[0.98] transition-all" size="lg">
-              <Search size={18} />
-              Cari Trip
-            </Button>
+            <a href="#destinations" className="w-full">
+              <Button className="w-full gap-2 rounded-2xl shadow-lg shadow-blue-200/50 hover:shadow-blue-300/60 hover:scale-[1.02] active:scale-[0.98] transition-all" size="lg">
+                <Search size={18} />
+                Cari Trip
+              </Button>
+            </a>
           </div>
         </motion.div>
 
