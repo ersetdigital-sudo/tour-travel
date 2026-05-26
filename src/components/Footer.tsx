@@ -18,7 +18,7 @@ export function Footer() {
               <span className="text-xl font-black text-white">octafkreasi</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-5 max-w-sm">
-              Liburan Murah Liburan Ceria. Platform booking wisata terpercaya di Indonesia
+              Platform booking wisata terpercaya di Indonesia
               dengan harga terbaik dan pelayanan profesional.
             </p>
             <div className="flex items-center gap-3">
@@ -72,7 +72,7 @@ export function Footer() {
           <p className="flex items-center gap-1">
             &copy; 2026 octafkreasi. Made with <Heart size={12} className="text-red-400 fill-red-400" /> in Indonesia.
           </p>
-          <p className="text-gray-600">Liburan Murah Liburan Ceria</p>
+          <p className="text-gray-600">Explore Nusantara</p>
         </div>
       </div>
     </footer>

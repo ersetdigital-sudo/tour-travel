@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "octafkreasi - Liburan Murah Liburan Ceria",
+  title: "octafkreasi - Jelajahi Keajaiban Nusantara",
   description:
     "Platform booking wisata terpercaya di Indonesia. Temukan destinasi impianmu dengan harga terjangkau.",
   keywords: "travel, wisata, liburan, Indonesia, booking, tour",

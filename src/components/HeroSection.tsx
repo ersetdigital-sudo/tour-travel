@@ -56,7 +56,7 @@ export function HeroSection() {
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-blue-100 mb-8 shadow-sm"
         >
           <Sparkles size={14} className="text-amber-500" />
-          <span className="text-blue-700 text-sm font-semibold">Liburan Murah Liburan Ceria</span>
+          <span className="text-blue-700 text-sm font-semibold">Travel Platform Indonesia</span>
           <span className="px-2.5 py-0.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider">
             2026
           </span>
